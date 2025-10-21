@@ -1,11 +1,10 @@
+#!/usr/bin/var groovy
+
+@Library('jenkins-shared-library')
 def gv
 
 pipeline {
     agent any
-    /*parameters {
-        choice(name: 'VERSION', choices: ['1.1.0','1.2.2','1.3.4'], description: '')
-        booleanParam(name: 'executeTests', defaultValue: true, description: '')
-    }*/
     tools {
         maven 'maven-3.9'
     }
@@ -21,7 +20,8 @@ pipeline {
             steps {
                 script {
                     //gv.buildJar()
-                    echo "build jar from $BRANCH_NAME"
+                    //echo "build jar from $BRANCH_NAME"
+                    buildJar()
                 }
             }
         }
@@ -30,25 +30,14 @@ pipeline {
                 script {
                     //gv.buildImage()
                     echo "build image $BRANCH_NAME"
+                    buildImage()
                 }
             }
         }
         stage("deploy") {
-            /*input {
-                message "Select the environment to deploy to"
-                ok "Done"
-                parameters {
-                    choice(name: 'ONE', choices: ['dev', 'staging', 'prod'], description: '')
-                    choice(name: 'TWO', choices: ['dev', 'staging', 'prod'], description: '')
-                }
-            }*/
             steps {
                 script {
-                    /*echo "deploying the application ..."
-                    echo "deploying version ${params.VERSION}"
-                    echo "Deploying to ${ONE}"
-                    echo "Deploying to ${TWO}"*/
-                    //gv.deployApp()
+                    gv.deployApp()
                     echo "deploy $BRANCH_NAME"
                 }
             }
