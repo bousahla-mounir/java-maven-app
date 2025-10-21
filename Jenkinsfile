@@ -1,6 +1,13 @@
 #!/usr/bin/var groovy
 
-@Library('jenkins-shared-library')
+//@Library('jenkins-shared-library')   // if we work with system=>Global Trusted Pipeline Libraries
+library identifier: 'jenkins-shared-library@master', retriever: modernSCM(
+    [
+        $class: 'GitSCMSource',
+        remote: 'https://github.com/bousahla-mounir/jenkins-shared-library.git'
+        credentialsId: 'github-credential'
+    ]
+)
 def gv
 
 pipeline {
