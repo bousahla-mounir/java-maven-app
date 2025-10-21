@@ -30,7 +30,7 @@ pipeline {
                 script {
                     //gv.buildImage()
                     echo "build image $BRANCH_NAME"
-                    buildImage 'adabachir/demo-repo:jma-7.1'
+                    buildImage 'adabachir/demo-repo:jma-7.9'
                 }
             }
         }
