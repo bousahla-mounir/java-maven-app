@@ -20,14 +20,16 @@ pipeline {
         stage("build jar") {
             steps {
                 script {
-                    gv.buildJar()
+                    //gv.buildJar()
+                    echo "build jar from $BRANCH_NAME"
                 }
             }
         }
         stage("build image") {
             steps {
                 script {
-                    gv.buildImage()
+                    //gv.buildImage()
+                    echo "build image $BRANCH_NAME"
                 }
             }
         }
@@ -46,7 +48,8 @@ pipeline {
                     echo "deploying version ${params.VERSION}"
                     echo "Deploying to ${ONE}"
                     echo "Deploying to ${TWO}"*/
-                    gv.deployApp()
+                    //gv.deployApp()
+                    echo "deploy $BRANCH_NAME"
                 }
             }
         }
