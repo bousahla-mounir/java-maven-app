@@ -25,12 +25,14 @@ pipeline {
                 }
             }
         }
-        stage("build image") {
+        stage("build and push image") {
             steps {
                 script {
                     //gv.buildImage()
                     echo "build image $BRANCH_NAME"
-                    buildImage 'adabachir/demo-repo:jma-7.9'
+                    buildImage 'adabachir/demo-repo:jma-8.3'
+                    dockerLogin()
+                    dockerPush 'adabachir/demo-repo:jma-8.3'
                 }
             }
         }
