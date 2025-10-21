@@ -37,9 +37,9 @@ pipeline {
                 script {
                     //gv.buildImage()
                     echo "build image $BRANCH_NAME"
-                    buildImage 'adabachir/demo-repo:jma-8.3'
+                    buildImage 'adabachir/demo-repo:jma-8.6'
                     dockerLogin()
-                    dockerPush 'adabachir/demo-repo:jma-8.3'
+                    dockerPush 'adabachir/demo-repo:jma-8.6'
                 }
             }
         }
