@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     //gv.buildJar()
-                    echo "build jar from $BRANCH_NAME"
+                    echo "build jar from"
                     echo "webhook test"
                 }
             }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     //gv.buildImage()
-                    echo "build image $BRANCH_NAME"
+                    echo "build image"
                 }
             }
         }
@@ -50,7 +50,7 @@ pipeline {
                     echo "Deploying to ${ONE}"
                     echo "Deploying to ${TWO}"*/
                     //gv.deployApp()
-                    echo "deploy $BRANCH_NAME"
+                    echo "deploy"
                 }
             }
         }
