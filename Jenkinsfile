@@ -22,6 +22,7 @@ pipeline {
                 script {
                     //gv.buildJar()
                     echo "build jar from $BRANCH_NAME"
+                    echo "webhook test"
                 }
             }
         }
