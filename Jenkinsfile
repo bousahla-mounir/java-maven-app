@@ -22,7 +22,7 @@ pipeline {
                 script {
                     //gv.buildJar()
                     echo "build jar from"
-                    echo "webhook test"
+                    echo "webhook test v_3"
                 }
             }
         }
