@@ -62,7 +62,7 @@ pipeline {
                 }
             }
         }
-        stage("init") {
+        stage("commit version update") {
             steps {
                 script {
                     withCredentials([script.usernamePassword(credentialsId: 'github-credential', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
